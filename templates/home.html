@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ block.super }} {{ title }} {% endblock %}
+
+{% block content %}
+
+{% for post in posts %}
+
+<div class="post-entry">
+    <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+    <h4>Author: {{ post.author }}</h4>
+    <strong><p>{{ post.body }}</p></strong>
+</div>
+
+{% endfor %}
+
+{% endblock %}
